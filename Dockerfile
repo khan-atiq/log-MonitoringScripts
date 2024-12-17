@@ -18,5 +18,5 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
     CMD python3 -c "import os; exit(0 if os.path.isfile('/logs/laravel.log') else 1)"
 
 # Run the script when the container starts
-CMD ["python", "monitor_logs.py"]
+CMD ["python", "monitoring_logs.py"]
 
