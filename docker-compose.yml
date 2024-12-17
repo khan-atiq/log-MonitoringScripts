@@ -1,0 +1,13 @@
+version: '3'
+services:
+  log-monitor:
+    build: .
+    volumes:
+      - /opt/docker/dms/dev/dms/laravel:/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "python3 -c 'import os; exit(0 if os.path.isfile(\"/logs/laravel.log\") else 1)'"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
