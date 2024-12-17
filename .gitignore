@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# not want to push to repo
+monitor_logs.py
+monitor_logs.py-old 
+
 # C extensions
 *.so
 
